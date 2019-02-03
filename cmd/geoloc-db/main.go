@@ -58,12 +58,12 @@ func findClosestN(city *geoip2.City, sites []*model.Site, n int) []*model.Site {
 			heap.Push(h, sites[i])
 		}
 	}
-	fmt.Println("len", h.Len())
+	// fmt.Println("len", h.Len())
 	nearest = append(nearest, heap.Pop(h).(*model.Site))
 	for i := 0; i < (n - 1); i++ {
 		nearest = append(nearest, heap.Pop(h).(*model.Site))
 	}
-	fmt.Println("len", h.Len())
+	// fmt.Println("len", h.Len())
 	/*
 		TODO: run benchmark to compare heap with simple sort.
 		sort.Slice(*sites, func(i, j int) bool {
@@ -96,7 +96,8 @@ func main() {
 
 		match := findClosestN(city, sites, 1)
 
-		fmt.Println(ip, city.Location.Latitude, city.Location.Longitude, site, match[0].Name, match[0].Distance)
+		// fmt.Println(ip, city.Location.Latitude, city.Location.Longitude, site, match[0].Name, match[0].Distance)
+		fmt.Println(ip, site[:3], match[0].Name[:3], match[0].Distance)
 	}
 	// fmt.Println("ok", geoip2.City{})
 }
