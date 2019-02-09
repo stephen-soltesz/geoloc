@@ -85,8 +85,9 @@ func main() {
 
 	for rec, err := r.Read(); err == nil; rec, err = r.Read() {
 		// ts := rec[0]
-		ip := rec[1]
-		site := rec[2]
+		ip := rec[2]
+		site := rec[3]
+		country := rec[4]
 
 		city, err := reader.City(net.ParseIP(ip))
 		if err != nil {
@@ -97,7 +98,7 @@ func main() {
 		match := findClosestN(city, sites, 1)
 
 		// fmt.Println(ip, city.Location.Latitude, city.Location.Longitude, site, match[0].Name, match[0].Distance)
-		fmt.Println(ip, site[:3], match[0].Name[:3], match[0].Distance)
+		fmt.Println(ip, site[:3], match[0].Name[:3], country, city.Country.IsoCode, match[0].Distance)
 	}
 	// fmt.Println("ok", geoip2.City{})
 }
