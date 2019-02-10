@@ -1,7 +1,10 @@
-// https://rosettacode.org/wiki/Voronoi_diagram#Go
+// Logic derived from https://rosettacode.org/wiki/Voronoi_diagram#Go
 package main
 
 import (
+	"bytes"
+	"encoding/csv"
+	"flag"
 	"fmt"
 	"image"
 	"image/color"
@@ -10,11 +13,13 @@ import (
 	"log"
 	"math/rand"
 	"os"
+	"strconv"
 
 	"golang.org/x/image/font"
 	"golang.org/x/image/font/basicfont"
 	"golang.org/x/image/math/fixed"
 
+	"github.com/m-lab/go/flagx"
 	"github.com/stephen-soltesz/geoloc/model"
 )
 
@@ -113,6 +118,8 @@ func addSitesAndVoronoiToMap(file string) error {
 	r := img.Bounds()
 	fmt.Println("max", r.Max)
 
+	plotClients(rgb)
+
 	// Load all M-Lab sites.
 	sites := model.LoadSitesInfo("mlab-site-stats.json")
 	sx := make([]int, len(sites))
@@ -142,6 +149,31 @@ func addSitesAndVoronoiToMap(file string) error {
 
 }
 
+func plotClients(img *image.RGBA) {
+	if len(clientLocations) == 0 {
+		log.Println("clientLocations is empty")
+		return
+	}
+	log.Println("plotting client locations")
+	buf := bytes.NewBuffer(clientLocations)
+	r := csv.NewReader(buf)
+	b := img.Bounds()
+	for rec, err := r.Read(); err == nil; rec, err = r.Read() {
+		lat, _ := strconv.ParseFloat(rec[1], 64)
+		lon, _ := strconv.ParseFloat(rec[2], 64)
+		p := Point{
+			Lat:    lat,
+			Lon:    lon,
+			Width:  b.Max.X,
+			Height: b.Max.Y,
+		}
+		c := color.RGBA{uint8(0), uint8(0), uint8(0), 255}
+
+		// fmt.Println(p.X(), p.Y(), c)
+		img.SetRGBA(p.X(), p.Y(), c)
+	}
+}
+
 func writePngFile(img image.Image, name string) {
 	f, err := os.Create(name)
 	if err != nil {
@@ -156,6 +188,13 @@ func writePngFile(img image.Image, name string) {
 	}
 }
 
+var clientLocations flagx.FileBytes
+
+func init() {
+	flag.Var(&clientLocations, "clients", "File to read contents.")
+}
+
 func main() {
+	flag.Parse()
 	addSitesAndVoronoiToMap("base.png")
 }
