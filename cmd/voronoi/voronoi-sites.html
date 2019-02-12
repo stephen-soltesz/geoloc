@@ -1,0 +1,165 @@
+ 
+<!-- VoronoiD.html -->
+<html>
+<head><title>Voronoi diagram</title>
+<script type="text/javascript" src="sitesraw.json"></script>
+
+<script>
+
+function loadAndRun() {
+    // loadJSON(make_base);
+    make_base(sites);
+}
+
+function loadJSON(callback) {   
+
+    var xobj = new XMLHttpRequest();
+
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'sites2.json', true);
+    xobj.onreadystatechange = function () {
+       if (xobj.readyState == 4 && xobj.status == "200") {
+          // Required use of an anonymous callback as .open will NOT return a
+          // value but simply returns undefined in asynchronous mode
+          callback(xobj.responseText);
+        }
+    };
+    xobj.send(null);  
+}
+
+function make_base(sites)
+{
+  var canvas = document.getElementById('cvsId');
+  var context = canvas.getContext('2d');
+  // sites = JSON.parse(sitesraw);
+  var select = document.getElementById('select');
+
+
+  metros = {};
+  for(var i=0; i<sites.length; i++) {
+      if (sites[i].site[4] == 'c' || sites[i].site[4] == 't') {
+          continue;
+      }
+    metros[sites[i].metro[1]] = "";
+  }
+  select.size = Object.keys(metros).length
+
+  for (var key in metros) {
+    var option = document.createElement("option");
+    option.text = key;
+    select.add(option);
+  }
+
+  base_image = new Image();
+  base_image.src = 'small-base.png';
+  base_image.onload = function(){
+    context.drawImage(base_image, 0, 0);
+    context.globalAlpha = 0.5;
+    pVoronoiD();
+  }
+}
+
+function rgbToHex(r, g, b) {
+  if (r > 255 || g > 255 || b > 255)
+      throw "Invalid color component";
+  return ((r << 16) | (g << 8) | b).toString(16);
+}
+
+function getColorStr(r1, g1, b1, r2, g2, b2, pct) {
+  var rn = Math.round((1-pct) * r1 + pct * r2),
+      gn = Math.round((1-pct) * g1 + pct * g2),
+      bn = Math.round((1-pct) * b1 + pct * b2);
+  return 'rgb('+rn+','+gn+','+bn+')'
+}
+
+function ll_X(w, lon) {
+    return Math.round(w * (lon + 180.0) / 360.0)
+}
+function ll_Y(h, lat) {
+    return Math.round(h * (1 - (lat+90.0) / 180.0))
+}
+
+//func (p *Point) Y() int {
+//	return int(float64(p.Height) * (1 - (p.Lat+90.0)/180.0))
+//}
+
+// HF#1 Like in PARI/GP: return random number 0..max-1
+function randgp(max) {return Math.floor(Math.random()*max)}
+// HF#2 Random hex color
+function randhclr() {
+  return "#"+
+  ("00"+randgp(256).toString(16)).slice(-2)+
+  ("00"+randgp(256).toString(16)).slice(-2)+
+  ("00"+randgp(256).toString(16)).slice(-2)+
+  ("44")
+}
+// HF#3 Metrics: Euclidean, Manhattan and Minkovski 3/20/17
+function Metric(x,y,mt) {
+  if(mt==1) {return Math.sqrt(x*x + y*y)}
+  if(mt==2) {return Math.abs(x) + Math.abs(y)}
+  if(mt==3) {return(Math.pow(Math.pow(Math.abs(x),3) + Math.pow(Math.abs(y),3),0.33333))}
+}
+// Plotting Voronoi diagram. aev 3/10/17
+function pVoronoiD() {
+  var cvs=document.getElementById("cvsId");
+  var ctx=cvs.getContext("2d");
+  var w=cvs.width, h=cvs.height;
+  var x=y=d=dm=j=0, w1=w-2, h1=h-2;
+  var n= sites.length; // document.getElementById("sites").value;
+  var mt=document.getElementById("mt").value;
+  var X=new Array(n), Y=new Array(n), C=new Array(n);
+  ctx.fillStyle="white"; ctx.fillRect(0,0,w,h);
+  for(var i=0; i<n; i++) {
+    X[i]=randgp(w1); Y[i]=randgp(h1); C[i]=randhclr();
+  }
+  for(var i=0; i<n; i++) {
+    X[i]=ll_X(w, sites[i].longitude);
+    Y[i]=ll_Y(h, sites[i].latitude);
+  }
+  for(y=0; y<h1; y++) {
+    for(x=0; x<w1; x++) {
+      dm=Metric(h1,w1,mt); j=-1;
+      for(var i=0; i<n; i++) {
+        d=Metric(X[i]-x,Y[i]-y,mt)
+        if(d<dm) {dm=d; j=i;}
+      }//fend i
+
+      // var p = c.getImageData(x, y, 1, 1).data; 
+      // var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
+      // var color = getColorStr(color1[0], color1[1], color1[2], color2[0], color2[1], color2[2], cyclePct);
+
+      ctx.fillStyle=C[j]; ctx.fillRect(x,y,1,1);
+
+    }//fend x
+  }//fend y
+  ctx.fillStyle="black";
+  for(var i=0; i<n; i++) {
+    ctx.fillRect(X[i],Y[i],3,3);
+  }
+}
+</script></head>
+<body style="font-family: arial, helvatica, sans-serif;">
+  <b>Please input number of sites: </b>
+  <!--input id="sites" value=100 type="number" min="10" max="150" size="3"-->&nbsp;&nbsp;
+
+  <b>Metric: </b>
+  <select id="mt">
+    <option value=1 selected>Euclidean</option>
+    <option value=2>Manhattan</option>
+    <option value=3>Minkovski</option>
+  </select>&nbsp;
+  <input type="button" value="Plot it!" onclick="loadAndRun();">&nbsp;&nbsp;
+  <h3>Voronoi diagram</h3>
+  <table>
+   <tr>
+    <td>
+  <canvas id="cvsId" width="1260" height="630" style="border: 2px inset;"></canvas>
+    </td>
+    <td>
+  <select id="select" multiple></select>
+    </td>
+   </tr>
+  </table>
+</body>
+</html>
+ 
