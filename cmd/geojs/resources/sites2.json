@@ -1,0 +1,1694 @@
+[
+  {
+    "city": "Accra", 
+    "metro": [
+      "acc02", 
+      "acc"
+    ], 
+    "country": "GH", 
+    "site": "acc02", 
+    "longitude": -0.1681, 
+    "latitude": 5.606, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Auckland", 
+    "metro": [
+      "akl01", 
+      "akl"
+    ], 
+    "country": "NZ", 
+    "site": "akl01", 
+    "longitude": 174.783, 
+    "latitude": -36.85, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Amsterdam", 
+    "metro": [
+      "ams01", 
+      "ams"
+    ], 
+    "country": "NL", 
+    "site": "ams01", 
+    "longitude": 4.7639, 
+    "latitude": 52.3086, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Amsterdam", 
+    "metro": [
+      "ams03", 
+      "ams"
+    ], 
+    "country": "NL", 
+    "site": "ams03", 
+    "longitude": 4.7639, 
+    "latitude": 52.3086, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Amsterdam", 
+    "metro": [
+      "ams04", 
+      "ams"
+    ], 
+    "country": "NL", 
+    "site": "ams04", 
+    "longitude": 4.7639, 
+    "latitude": 52.3086, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Amsterdam", 
+    "metro": [
+      "ams05", 
+      "ams"
+    ], 
+    "country": "NL", 
+    "site": "ams05", 
+    "longitude": 4.7639, 
+    "latitude": 52.3086, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Amsterdam", 
+    "metro": [
+      "ams06", 
+      "ams"
+    ], 
+    "country": "NL", 
+    "site": "ams06", 
+    "longitude": 4.7639, 
+    "latitude": 52.3086, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Amsterdam", 
+    "metro": [
+      "ams07", 
+      "ams"
+    ], 
+    "country": "NL", 
+    "site": "ams07", 
+    "longitude": 4.7639, 
+    "latitude": 52.3086, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Stockholm", 
+    "metro": [
+      "arn02", 
+      "arn"
+    ], 
+    "country": "SE", 
+    "site": "arn02", 
+    "longitude": 17.9186, 
+    "latitude": 59.6519, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Stockholm", 
+    "metro": [
+      "arn03", 
+      "arn"
+    ], 
+    "country": "SE", 
+    "site": "arn03", 
+    "longitude": 17.9186, 
+    "latitude": 59.6519, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Stockholm", 
+    "metro": [
+      "arn04", 
+      "arn"
+    ], 
+    "country": "SE", 
+    "site": "arn04", 
+    "longitude": 17.9186, 
+    "latitude": 59.6519, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Stockholm", 
+    "metro": [
+      "arn05", 
+      "arn"
+    ], 
+    "country": "SE", 
+    "site": "arn05", 
+    "longitude": 17.9186, 
+    "latitude": 59.6519, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Atlanta_GA", 
+    "metro": [
+      "atl01", 
+      "atl"
+    ], 
+    "country": "US", 
+    "site": "atl01", 
+    "longitude": -84.4281, 
+    "latitude": 33.6367, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Atlanta_GA", 
+    "metro": [
+      "atl02", 
+      "atl"
+    ], 
+    "country": "US", 
+    "site": "atl02", 
+    "longitude": -84.4281, 
+    "latitude": 33.6367, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Atlanta_GA", 
+    "metro": [
+      "atl03", 
+      "atl"
+    ], 
+    "country": "US", 
+    "site": "atl03", 
+    "longitude": -84.4281, 
+    "latitude": 33.6367, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Atlanta_GA", 
+    "metro": [
+      "atl04", 
+      "atl"
+    ], 
+    "country": "US", 
+    "site": "atl04", 
+    "longitude": -84.4281, 
+    "latitude": 33.6367, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Atlanta_GA", 
+    "metro": [
+      "atl05", 
+      "atl"
+    ], 
+    "country": "US", 
+    "site": "atl05", 
+    "longitude": -84.4281, 
+    "latitude": 33.6367, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Atlanta_GA", 
+    "metro": [
+      "atl06", 
+      "atl"
+    ], 
+    "country": "US", 
+    "site": "atl06", 
+    "longitude": -84.4281, 
+    "latitude": 33.6367, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Athens", 
+    "metro": [
+      "ath03", 
+      "ath"
+    ], 
+    "country": "GR", 
+    "site": "ath03", 
+    "longitude": 23.9444, 
+    "latitude": 37.9364, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Barcelona", 
+    "metro": [
+      "bcn01", 
+      "bcn"
+    ], 
+    "country": "ES", 
+    "site": "bcn01", 
+    "longitude": 2.0811, 
+    "latitude": 41.2974, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Belgrade", 
+    "metro": [
+      "beg01", 
+      "beg"
+    ], 
+    "country": "RS", 
+    "site": "beg01", 
+    "longitude": 20.2921, 
+    "latitude": 44.8216, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Mumbai", 
+    "metro": [
+      "bom01", 
+      "bom"
+    ], 
+    "country": "IN", 
+    "site": "bom01", 
+    "longitude": 72.8681, 
+    "latitude": 19.0886, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Mumbai", 
+    "metro": [
+      "bom02", 
+      "bom"
+    ], 
+    "country": "IN", 
+    "site": "bom02", 
+    "longitude": 72.8681, 
+    "latitude": 19.0886, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Brussels", 
+    "metro": [
+      "bru01", 
+      "bru"
+    ], 
+    "country": "BE", 
+    "site": "bru01", 
+    "longitude": 3.3528, 
+    "latitude": 50.4974, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Brussels", 
+    "metro": [
+      "bru02", 
+      "bru"
+    ], 
+    "country": "BE", 
+    "site": "bru02", 
+    "longitude": 3.3528, 
+    "latitude": 50.4974, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Brussels", 
+    "metro": [
+      "bru03", 
+      "bru"
+    ], 
+    "country": "BE", 
+    "site": "bru03", 
+    "longitude": 3.3528, 
+    "latitude": 50.4974, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Brussels", 
+    "metro": [
+      "bru04", 
+      "bru"
+    ], 
+    "country": "BE", 
+    "site": "bru04", 
+    "longitude": 3.3528, 
+    "latitude": 50.4974, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Cape_Town", 
+    "metro": [
+      "cpt01", 
+      "cpt"
+    ], 
+    "country": "ZA", 
+    "site": "cpt01", 
+    "longitude": 18.6018, 
+    "latitude": -33.9724, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Denver_CO", 
+    "metro": [
+      "den01", 
+      "den"
+    ], 
+    "country": "US", 
+    "site": "den01", 
+    "longitude": -104.6737, 
+    "latitude": 39.8561, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Denver_CO", 
+    "metro": [
+      "den02", 
+      "den"
+    ], 
+    "country": "US", 
+    "site": "den02", 
+    "longitude": -104.6737, 
+    "latitude": 39.8561, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Denver_CO", 
+    "metro": [
+      "den04", 
+      "den"
+    ], 
+    "country": "US", 
+    "site": "den04", 
+    "longitude": -104.6737, 
+    "latitude": 39.8561, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Denver_CO", 
+    "metro": [
+      "den05", 
+      "den"
+    ], 
+    "country": "US", 
+    "site": "den05", 
+    "longitude": -104.6737, 
+    "latitude": 39.8561, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Dallas_TX", 
+    "metro": [
+      "dfw01", 
+      "dfw"
+    ], 
+    "country": "US", 
+    "site": "dfw01", 
+    "longitude": -97.0381, 
+    "latitude": 32.8969, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Dallas_TX", 
+    "metro": [
+      "dfw02", 
+      "dfw"
+    ], 
+    "country": "US", 
+    "site": "dfw02", 
+    "longitude": -97.0381, 
+    "latitude": 32.8969, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Dallas_TX", 
+    "metro": [
+      "dfw03", 
+      "dfw"
+    ], 
+    "country": "US", 
+    "site": "dfw03", 
+    "longitude": -97.0381, 
+    "latitude": 32.8969, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Dallas_TX", 
+    "metro": [
+      "dfw05", 
+      "dfw"
+    ], 
+    "country": "US", 
+    "site": "dfw05", 
+    "longitude": -97.0381, 
+    "latitude": 32.8969, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Dallas_TX", 
+    "metro": [
+      "dfw06", 
+      "dfw"
+    ], 
+    "country": "US", 
+    "site": "dfw06", 
+    "longitude": -97.0381, 
+    "latitude": 32.8969, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Dallas_TX", 
+    "metro": [
+      "dfw07", 
+      "dfw"
+    ], 
+    "country": "US", 
+    "site": "dfw07", 
+    "longitude": -97.0381, 
+    "latitude": 32.8969, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Dublin", 
+    "metro": [
+      "dub01", 
+      "dub"
+    ], 
+    "country": "IE", 
+    "site": "dub01", 
+    "longitude": -6.25, 
+    "latitude": 53.4333, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Florianopolis", 
+    "metro": [
+      "fln01", 
+      "fln"
+    ], 
+    "country": "BR", 
+    "site": "fln01", 
+    "longitude": -48.546, 
+    "latitude": -27.6685, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Frankfurt", 
+    "metro": [
+      "fra01", 
+      "fra"
+    ], 
+    "country": "DE", 
+    "site": "fra01", 
+    "longitude": 8.5622, 
+    "latitude": 50.0379, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Frankfurt", 
+    "metro": [
+      "fra02", 
+      "fra"
+    ], 
+    "country": "DE", 
+    "site": "fra02", 
+    "longitude": 8.5622, 
+    "latitude": 50.0379, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Frankfurt", 
+    "metro": [
+      "fra03", 
+      "fra"
+    ], 
+    "country": "DE", 
+    "site": "fra03", 
+    "longitude": 8.5622, 
+    "latitude": 50.0379, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Frankfurt", 
+    "metro": [
+      "fra04", 
+      "fra"
+    ], 
+    "country": "DE", 
+    "site": "fra04", 
+    "longitude": 8.5622, 
+    "latitude": 50.0379, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Hamburg", 
+    "metro": [
+      "ham01", 
+      "ham"
+    ], 
+    "country": "DE", 
+    "site": "ham01", 
+    "longitude": 9.9833, 
+    "latitude": 53.6333, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Tokyo", 
+    "metro": [
+      "hnd01", 
+      "hnd"
+    ], 
+    "country": "JP", 
+    "site": "hnd01", 
+    "longitude": 139.78, 
+    "latitude": 35.5522, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Tokyo", 
+    "metro": [
+      "hnd02", 
+      "hnd"
+    ], 
+    "country": "JP", 
+    "site": "hnd02", 
+    "longitude": 139.78, 
+    "latitude": 35.5522, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Washington_DC", 
+    "metro": [
+      "iad02", 
+      "iad"
+    ], 
+    "country": "US", 
+    "site": "iad02", 
+    "longitude": -77.4558, 
+    "latitude": 38.9444, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Washington_DC", 
+    "metro": [
+      "iad03", 
+      "iad"
+    ], 
+    "country": "US", 
+    "site": "iad03", 
+    "longitude": -77.4558, 
+    "latitude": 38.9444, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Washington_DC", 
+    "metro": [
+      "iad04", 
+      "iad"
+    ], 
+    "country": "US", 
+    "site": "iad04", 
+    "longitude": -77.4558, 
+    "latitude": 38.9444, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Washington_DC", 
+    "metro": [
+      "iad05", 
+      "iad"
+    ], 
+    "country": "US", 
+    "site": "iad05", 
+    "longitude": -77.4558, 
+    "latitude": 38.9444, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Washington_DC", 
+    "metro": [
+      "iad06", 
+      "iad"
+    ], 
+    "country": "US", 
+    "site": "iad06", 
+    "longitude": -77.4558, 
+    "latitude": 38.9444, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Johannesburg", 
+    "metro": [
+      "jnb01", 
+      "jnb"
+    ], 
+    "country": "ZA", 
+    "site": "jnb01", 
+    "longitude": 28.1335, 
+    "latitude": -26.2035, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Los Angeles_CA", 
+    "metro": [
+      "lax01", 
+      "lax"
+    ], 
+    "country": "US", 
+    "site": "lax01", 
+    "longitude": -118.4072, 
+    "latitude": 33.9425, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Los Angeles_CA", 
+    "metro": [
+      "lax02", 
+      "lax"
+    ], 
+    "country": "US", 
+    "site": "lax02", 
+    "longitude": -118.4072, 
+    "latitude": 33.9425, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Los Angeles_CA", 
+    "metro": [
+      "lax03", 
+      "lax"
+    ], 
+    "country": "US", 
+    "site": "lax03", 
+    "longitude": -118.4072, 
+    "latitude": 33.9425, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Los Angeles_CA", 
+    "metro": [
+      "lax04", 
+      "lax"
+    ], 
+    "country": "US", 
+    "site": "lax04", 
+    "longitude": -118.4072, 
+    "latitude": 33.9425, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Los Angeles_CA", 
+    "metro": [
+      "lax05", 
+      "lax"
+    ], 
+    "country": "US", 
+    "site": "lax05", 
+    "longitude": -118.4072, 
+    "latitude": 33.9425, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Leeds", 
+    "metro": [
+      "lba01", 
+      "lba"
+    ], 
+    "country": "GB", 
+    "site": "lba01", 
+    "longitude": -1.6606, 
+    "latitude": 53.8658, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Larnaca", 
+    "metro": [
+      "lca01", 
+      "lca"
+    ], 
+    "country": "CY", 
+    "site": "lca01", 
+    "longitude": 33.626, 
+    "latitude": 34.8809, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "New York_NY", 
+    "metro": [
+      "lga02", 
+      "lga"
+    ], 
+    "country": "US", 
+    "site": "lga02", 
+    "longitude": -73.8667, 
+    "latitude": 40.7667, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "New York_NY", 
+    "metro": [
+      "lga03", 
+      "lga"
+    ], 
+    "country": "US", 
+    "site": "lga03", 
+    "longitude": -73.8667, 
+    "latitude": 40.7667, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "New York_NY", 
+    "metro": [
+      "lga04", 
+      "lga"
+    ], 
+    "country": "US", 
+    "site": "lga04", 
+    "longitude": -73.8667, 
+    "latitude": 40.7667, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "New York_NY", 
+    "metro": [
+      "lga05", 
+      "lga"
+    ], 
+    "country": "US", 
+    "site": "lga05", 
+    "longitude": -73.8667, 
+    "latitude": 40.7667, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "New York_NY", 
+    "metro": [
+      "lga06", 
+      "lga"
+    ], 
+    "country": "US", 
+    "site": "lga06", 
+    "longitude": -73.8667, 
+    "latitude": 40.7667, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "New York_NY", 
+    "metro": [
+      "lga07", 
+      "lga"
+    ], 
+    "country": "US", 
+    "site": "lga07", 
+    "longitude": -73.8667, 
+    "latitude": 40.7667, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "London", 
+    "metro": [
+      "lhr02", 
+      "lhr"
+    ], 
+    "country": "GB", 
+    "site": "lhr02", 
+    "longitude": -0.4514, 
+    "latitude": 51.4697, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "London", 
+    "metro": [
+      "lhr03", 
+      "lhr"
+    ], 
+    "country": "GB", 
+    "site": "lhr03", 
+    "longitude": -0.4514, 
+    "latitude": 51.4697, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "London", 
+    "metro": [
+      "lhr04", 
+      "lhr"
+    ], 
+    "country": "GB", 
+    "site": "lhr04", 
+    "longitude": -0.4514, 
+    "latitude": 51.4697, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "London", 
+    "metro": [
+      "lhr05", 
+      "lhr"
+    ], 
+    "country": "GB", 
+    "site": "lhr05", 
+    "longitude": -0.4514, 
+    "latitude": 51.4697, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Lisbon", 
+    "metro": [
+      "lis01", 
+      "lis"
+    ], 
+    "country": "PT", 
+    "site": "lis01", 
+    "longitude": -9.1354, 
+    "latitude": 38.7756, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Lisbon", 
+    "metro": [
+      "lis02", 
+      "lis"
+    ], 
+    "country": "PT", 
+    "site": "lis02", 
+    "longitude": -9.1354, 
+    "latitude": 38.7756, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Ljubljana", 
+    "metro": [
+      "lju01", 
+      "lju"
+    ], 
+    "country": "SI", 
+    "site": "lju01", 
+    "longitude": 14.4575, 
+    "latitude": 46.2236, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Lagos", 
+    "metro": [
+      "los01", 
+      "los"
+    ], 
+    "country": "NG", 
+    "site": "los01", 
+    "longitude": 3.3211, 
+    "latitude": 6.5821, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Madrid", 
+    "metro": [
+      "mad02", 
+      "mad"
+    ], 
+    "country": "ES", 
+    "site": "mad02", 
+    "longitude": -3.5667, 
+    "latitude": 40.4667, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Madrid", 
+    "metro": [
+      "mad03", 
+      "mad"
+    ], 
+    "country": "ES", 
+    "site": "mad03", 
+    "longitude": -3.5667, 
+    "latitude": 40.4667, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Madrid", 
+    "metro": [
+      "mad04", 
+      "mad"
+    ], 
+    "country": "ES", 
+    "site": "mad04", 
+    "longitude": -3.5667, 
+    "latitude": 40.4667, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Miami_FL", 
+    "metro": [
+      "mia01", 
+      "mia"
+    ], 
+    "country": "US", 
+    "site": "mia01", 
+    "longitude": -80.2667, 
+    "latitude": 25.7833, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Miami_FL", 
+    "metro": [
+      "mia02", 
+      "mia"
+    ], 
+    "country": "US", 
+    "site": "mia02", 
+    "longitude": -80.2667, 
+    "latitude": 25.7833, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Miami_FL", 
+    "metro": [
+      "mia03", 
+      "mia"
+    ], 
+    "country": "US", 
+    "site": "mia03", 
+    "longitude": -80.2667, 
+    "latitude": 25.7833, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Miami_FL", 
+    "metro": [
+      "mia04", 
+      "mia"
+    ], 
+    "country": "US", 
+    "site": "mia04", 
+    "longitude": -80.2667, 
+    "latitude": 25.7833, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Miami_FL", 
+    "metro": [
+      "mia05", 
+      "mia"
+    ], 
+    "country": "US", 
+    "site": "mia05", 
+    "longitude": -80.2667, 
+    "latitude": 25.7833, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Milan", 
+    "metro": [
+      "mil02", 
+      "mil"
+    ], 
+    "country": "IT", 
+    "site": "mil02", 
+    "longitude": 9.1916, 
+    "latitude": 45.464, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Milan", 
+    "metro": [
+      "mil03", 
+      "mil"
+    ], 
+    "country": "IT", 
+    "site": "mil03", 
+    "longitude": 9.1916, 
+    "latitude": 45.464, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Milan", 
+    "metro": [
+      "mil04", 
+      "mil"
+    ], 
+    "country": "IT", 
+    "site": "mil04", 
+    "longitude": 9.1916, 
+    "latitude": 45.464, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Milan", 
+    "metro": [
+      "mil05", 
+      "mil"
+    ], 
+    "country": "IT", 
+    "site": "mil05", 
+    "longitude": 9.1916, 
+    "latitude": 45.464, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Manila", 
+    "metro": [
+      "mnl01", 
+      "mnl"
+    ], 
+    "country": "PH", 
+    "site": "mnl01", 
+    "longitude": 121.0194, 
+    "latitude": 14.5086, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Maputo", 
+    "metro": [
+      "mpm01", 
+      "mpm"
+    ], 
+    "country": "MZ", 
+    "site": "mpm01", 
+    "longitude": 32.5725, 
+    "latitude": -25.9208, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Nairobi", 
+    "metro": [
+      "nbo01", 
+      "nbo"
+    ], 
+    "country": "KE", 
+    "site": "nbo01", 
+    "longitude": 36.9258, 
+    "latitude": -1.3192, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "San Francisco Bay Area_CA", 
+    "metro": [
+      "nuq02", 
+      "nuq"
+    ], 
+    "country": "US", 
+    "site": "nuq02", 
+    "longitude": -122.0667, 
+    "latitude": 37.3833, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "San Francisco Bay Area_CA", 
+    "metro": [
+      "nuq03", 
+      "nuq"
+    ], 
+    "country": "US", 
+    "site": "nuq03", 
+    "longitude": -122.0667, 
+    "latitude": 37.3833, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "San Francisco Bay Area_CA", 
+    "metro": [
+      "nuq04", 
+      "nuq"
+    ], 
+    "country": "US", 
+    "site": "nuq04", 
+    "longitude": -122.0667, 
+    "latitude": 37.3833, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "San Francisco Bay Area_CA", 
+    "metro": [
+      "nuq06", 
+      "nuq"
+    ], 
+    "country": "US", 
+    "site": "nuq06", 
+    "longitude": -122.0667, 
+    "latitude": 37.3833, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "San Francisco Bay Area_CA", 
+    "metro": [
+      "nuq07", 
+      "nuq"
+    ], 
+    "country": "US", 
+    "site": "nuq07", 
+    "longitude": -122.0667, 
+    "latitude": 37.3833, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Chicago_IL", 
+    "metro": [
+      "ord01", 
+      "ord"
+    ], 
+    "country": "US", 
+    "site": "ord01", 
+    "longitude": -87.9047, 
+    "latitude": 41.9786, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Chicago_IL", 
+    "metro": [
+      "ord02", 
+      "ord"
+    ], 
+    "country": "US", 
+    "site": "ord02", 
+    "longitude": -87.9047, 
+    "latitude": 41.9786, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Chicago_IL", 
+    "metro": [
+      "ord03", 
+      "ord"
+    ], 
+    "country": "US", 
+    "site": "ord03", 
+    "longitude": -87.9047, 
+    "latitude": 41.9786, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Chicago_IL", 
+    "metro": [
+      "ord04", 
+      "ord"
+    ], 
+    "country": "US", 
+    "site": "ord04", 
+    "longitude": -87.9047, 
+    "latitude": 41.9786, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Chicago_IL", 
+    "metro": [
+      "ord05", 
+      "ord"
+    ], 
+    "country": "US", 
+    "site": "ord05", 
+    "longitude": -87.9047, 
+    "latitude": 41.9786, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Paris", 
+    "metro": [
+      "par02", 
+      "par"
+    ], 
+    "country": "FR", 
+    "site": "par02", 
+    "longitude": 2.349, 
+    "latitude": 48.8584, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Paris", 
+    "metro": [
+      "par03", 
+      "par"
+    ], 
+    "country": "FR", 
+    "site": "par03", 
+    "longitude": 2.349, 
+    "latitude": 48.8584, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Paris", 
+    "metro": [
+      "par04", 
+      "par"
+    ], 
+    "country": "FR", 
+    "site": "par04", 
+    "longitude": 2.349, 
+    "latitude": 48.8584, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Paris", 
+    "metro": [
+      "par05", 
+      "par"
+    ], 
+    "country": "FR", 
+    "site": "par05", 
+    "longitude": 2.349, 
+    "latitude": 48.8584, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Prague", 
+    "metro": [
+      "prg02", 
+      "prg"
+    ], 
+    "country": "CZ", 
+    "site": "prg02", 
+    "longitude": 14.4167, 
+    "latitude": 50.0833, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Prague", 
+    "metro": [
+      "prg03", 
+      "prg"
+    ], 
+    "country": "CZ", 
+    "site": "prg03", 
+    "longitude": 14.4167, 
+    "latitude": 50.0833, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Prague", 
+    "metro": [
+      "prg04", 
+      "prg"
+    ], 
+    "country": "CZ", 
+    "site": "prg04", 
+    "longitude": 14.4167, 
+    "latitude": 50.0833, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Prague", 
+    "metro": [
+      "prg05", 
+      "prg"
+    ], 
+    "country": "CZ", 
+    "site": "prg05", 
+    "longitude": 14.4167, 
+    "latitude": 50.0833, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Seattle_WA", 
+    "metro": [
+      "sea01", 
+      "sea"
+    ], 
+    "country": "US", 
+    "site": "sea01", 
+    "longitude": -122.3094, 
+    "latitude": 47.4489, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Seattle_WA", 
+    "metro": [
+      "sea02", 
+      "sea"
+    ], 
+    "country": "US", 
+    "site": "sea02", 
+    "longitude": -122.3094, 
+    "latitude": 47.4489, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Seattle_WA", 
+    "metro": [
+      "sea03", 
+      "sea"
+    ], 
+    "country": "US", 
+    "site": "sea03", 
+    "longitude": -122.3094, 
+    "latitude": 47.4489, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Seattle_WA", 
+    "metro": [
+      "sea04", 
+      "sea"
+    ], 
+    "country": "US", 
+    "site": "sea04", 
+    "longitude": -122.3094, 
+    "latitude": 47.4489, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Seattle_WA", 
+    "metro": [
+      "sea06", 
+      "sea"
+    ], 
+    "country": "US", 
+    "site": "sea06", 
+    "longitude": -122.3094, 
+    "latitude": 47.4489, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Seattle_WA", 
+    "metro": [
+      "sea07", 
+      "sea"
+    ], 
+    "country": "US", 
+    "site": "sea07", 
+    "longitude": -122.3094, 
+    "latitude": 47.4489, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Singapore", 
+    "metro": [
+      "sin01", 
+      "sin"
+    ], 
+    "country": "SG", 
+    "site": "sin01", 
+    "longitude": 103.988, 
+    "latitude": 1.355, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "San Francisco Bay Area_CA", 
+    "metro": [
+      "sjc01", 
+      "sjc"
+    ], 
+    "country": "US", 
+    "site": "sjc01", 
+    "longitude": -122.0667, 
+    "latitude": 37.3833, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Stavanger", 
+    "metro": [
+      "svg01", 
+      "svg"
+    ], 
+    "country": "NO", 
+    "site": "svg01", 
+    "longitude": 5.6378, 
+    "latitude": 58.8767, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Sydney", 
+    "metro": [
+      "syd01", 
+      "syd"
+    ], 
+    "country": "AU", 
+    "site": "syd01", 
+    "longitude": 151.177, 
+    "latitude": -33.9461, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Sydney", 
+    "metro": [
+      "syd02", 
+      "syd"
+    ], 
+    "country": "AU", 
+    "site": "syd02", 
+    "longitude": 151.177, 
+    "latitude": -33.9461, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Podgorica", 
+    "metro": [
+      "tgd01", 
+      "tgd"
+    ], 
+    "country": "ME", 
+    "site": "tgd01", 
+    "longitude": 18.7616, 
+    "latitude": 42.1078, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Antananarivo", 
+    "metro": [
+      "tnr01", 
+      "tnr"
+    ], 
+    "country": "MG", 
+    "site": "tnr01", 
+    "longitude": 47.4788, 
+    "latitude": -18.7969, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Taipei", 
+    "metro": [
+      "tpe01", 
+      "tpe"
+    ], 
+    "country": "TW", 
+    "site": "tpe01", 
+    "longitude": 121.224, 
+    "latitude": 25.0778, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Turin", 
+    "metro": [
+      "trn01", 
+      "trn"
+    ], 
+    "country": "IT", 
+    "site": "trn01", 
+    "longitude": 7.6497, 
+    "latitude": 45.2008, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Tunis", 
+    "metro": [
+      "tun01", 
+      "tun"
+    ], 
+    "country": "TN", 
+    "site": "tun01", 
+    "longitude": 10.2291, 
+    "latitude": 36.8516, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Vienna", 
+    "metro": [
+      "vie01", 
+      "vie"
+    ], 
+    "country": "AT", 
+    "site": "vie01", 
+    "longitude": 16.4107, 
+    "latitude": 48.269, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Wellington", 
+    "metro": [
+      "wlg02", 
+      "wlg"
+    ], 
+    "country": "NZ", 
+    "site": "wlg02", 
+    "longitude": 174.805, 
+    "latitude": -41.3272, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Moncton", 
+    "metro": [
+      "yqm01", 
+      "yqm"
+    ], 
+    "country": "CA", 
+    "site": "yqm01", 
+    "longitude": -64.6738, 
+    "latitude": 46.1073, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Montreal", 
+    "metro": [
+      "yul02", 
+      "yul"
+    ], 
+    "country": "CA", 
+    "site": "yul02", 
+    "longitude": -73.7497, 
+    "latitude": 45.4576, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Vancouver", 
+    "metro": [
+      "yvr01", 
+      "yvr"
+    ], 
+    "country": "CA", 
+    "site": "yvr01", 
+    "longitude": -123.1837, 
+    "latitude": 49.1902, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Winnipeg", 
+    "metro": [
+      "ywg01", 
+      "ywg"
+    ], 
+    "country": "CA", 
+    "site": "ywg01", 
+    "longitude": -97.2373, 
+    "latitude": 49.906, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Calgary", 
+    "metro": [
+      "yyc02", 
+      "yyc"
+    ], 
+    "country": "CA", 
+    "site": "yyc02", 
+    "longitude": -114.0106, 
+    "latitude": 51.1315, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "Toronto", 
+    "metro": [
+      "yyz02", 
+      "yyz"
+    ], 
+    "country": "CA", 
+    "site": "yyz02", 
+    "longitude": -79.6306, 
+    "latitude": 43.6767, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "New York_NY", 
+    "metro": [
+      "lga0t", 
+      "lga"
+    ], 
+    "country": "US", 
+    "site": "lga0t", 
+    "longitude": -73.8667, 
+    "latitude": 40.7667, 
+    "roundrobin": true
+  }, 
+  {
+    "city": "New York_NY", 
+    "metro": [
+      "lga1t", 
+      "lga"
+    ], 
+    "country": "US", 
+    "site": "lga1t", 
+    "longitude": -73.8667, 
+    "latitude": 40.7667, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Charleston_SC", 
+    "metro": [
+      "chs", 
+      "chs0c"
+    ], 
+    "country": "US", 
+    "site": "chs0c", 
+    "longitude": -80.039184, 
+    "latitude": 32.896663, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Washington_DC", 
+    "metro": [
+      "iad", 
+      "iad0c"
+    ], 
+    "country": "US", 
+    "site": "iad0c", 
+    "longitude": -77.4558, 
+    "latitude": 38.9444, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Los Angeles_CA", 
+    "metro": [
+      "lax", 
+      "lax0c"
+    ], 
+    "country": "US", 
+    "site": "lax0c", 
+    "longitude": -118.4072, 
+    "latitude": 33.9425, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Omaha_NE", 
+    "metro": [
+      "oma", 
+      "oma0c"
+    ], 
+    "country": "US", 
+    "site": "oma0c", 
+    "longitude": -95.893282, 
+    "latitude": 41.30376, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Portland_OR", 
+    "metro": [
+      "pdx", 
+      "pdx0c"
+    ], 
+    "country": "US", 
+    "site": "pdx0c", 
+    "longitude": -122.600228, 
+    "latitude": 45.589191, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Tokyo", 
+    "metro": [
+      "tyo01", 
+      "tyo"
+    ], 
+    "country": "JP", 
+    "site": "tyo01", 
+    "longitude": 139.78, 
+    "latitude": 35.5522, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Tokyo", 
+    "metro": [
+      "tyo02", 
+      "tyo"
+    ], 
+    "country": "JP", 
+    "site": "tyo02", 
+    "longitude": 139.78, 
+    "latitude": 35.5522, 
+    "roundrobin": false
+  }, 
+  {
+    "city": "Tokyo", 
+    "metro": [
+      "tyo03", 
+      "tyo"
+    ], 
+    "country": "JP", 
+    "site": "tyo03", 
+    "longitude": 139.78, 
+    "latitude": 35.5522, 
+    "roundrobin": false
+  }
+]
