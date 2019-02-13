@@ -20749,26 +20749,20 @@ $packages["main"] = (function() {
 			mousePrevPos[0] = null;
 			updateInterval = 200;
 		}; })(canvas, color, height, mouseDown, mousePrevPos, sx, sy, width), funcType$2);
-		document.onmouseup = $externalize((function(canvas, color, height, mouseDown, mousePrevPos, sx, sy, width) { return function $b(evt) {
-			var _r, _r$1, _r$2, _r$3, context, evt, x, y, $s, $r;
-			/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; _r = $f._r; _r$1 = $f._r$1; _r$2 = $f._r$2; _r$3 = $f._r$3; context = $f.context; evt = $f.evt; x = $f.x; y = $f.y; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
+		document.onmouseup = $externalize((function(canvas, color, height, mouseDown, mousePrevPos, sx, sy, width) { return function(evt) {
+			var evt;
+			mouseDown[0] = false;
+			updateInterval = 1000;
+		}; })(canvas, color, height, mouseDown, mousePrevPos, sx, sy, width), funcType$2);
+		document.ondblclick = $externalize((function(canvas, color, height, mouseDown, mousePrevPos, sx, sy, width) { return function(evt) {
+			var context, evt, x, y;
 			mouseDown[0] = false;
 			updateInterval = 1000;
 			x = evt.offsetX;
 			y = evt.offsetY;
-			_r = fmt.Println(new sliceType([new $String("X:"), new $jsObjectPtr(evt.clientX)])); /* */ $s = 1; case 1: if($c) { $c = false; _r = _r.$blk(); } if (_r && _r.$blk !== undefined) { break s; }
-			_r;
 			context = canvas[0].getContext($externalize("2d", $String));
 			context.fillStyle = $externalize("#ff0000", $String);
 			context.fillRect(x, y, 4, 4);
-			_r$1 = fmt.Println(new sliceType([new $String("X:"), new $jsObjectPtr(evt.offsetX)])); /* */ $s = 2; case 2: if($c) { $c = false; _r$1 = _r$1.$blk(); } if (_r$1 && _r$1.$blk !== undefined) { break s; }
-			_r$1;
-			_r$2 = fmt.Println(new sliceType([new $String("X:"), new $jsObjectPtr(evt.pageX)])); /* */ $s = 3; case 3: if($c) { $c = false; _r$2 = _r$2.$blk(); } if (_r$2 && _r$2.$blk !== undefined) { break s; }
-			_r$2;
-			_r$3 = fmt.Println(new sliceType([new $String("X:"), new $jsObjectPtr(evt.screenX)])); /* */ $s = 4; case 4: if($c) { $c = false; _r$3 = _r$3.$blk(); } if (_r$3 && _r$3.$blk !== undefined) { break s; }
-			_r$3;
-			$s = -1; return;
-			/* */ } return; } if ($f === undefined) { $f = { $blk: $b }; } $f._r = _r; $f._r$1 = _r$1; $f._r$2 = _r$2; $f._r$3 = _r$3; $f.context = context; $f.evt = evt; $f.x = x; $f.y = y; $f.$s = $s; $f.$r = $r; return $f;
 		}; })(canvas, color, height, mouseDown, mousePrevPos, sx, sy, width), funcType$2);
 		document.onmousemove = $externalize((function(canvas, color, height, mouseDown, mousePrevPos, sx, sy, width) { return function(evt) {
 			var curr, evt, prev;

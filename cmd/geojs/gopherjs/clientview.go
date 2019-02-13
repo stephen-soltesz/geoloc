@@ -165,19 +165,23 @@ func addCanvas(containerName, canvasName string, width, height int) {
 	document.Set("onmouseup", func(evt *js.Object) {
 		mouseDown = false
 		updateInterval = 1000
+	})
+	document.Set("ondblclick", func(evt *js.Object) {
+		mouseDown = false
+		updateInterval = 1000
 
 		x := evt.Get("offsetX")
 		y := evt.Get("offsetY")
-		fmt.Println("X:", evt.Get("clientX"))
+		// fmt.Println("X:", evt.Get("clientX"))
 		// fmt.Println("Y:", evt.Get("clientY"))
 
 		context := canvas.Call("getContext", "2d")
 		context.Set("fillStyle", "#ff0000")
 		context.Call("fillRect", x, y, 4, 4)
 
-		fmt.Println("X:", evt.Get("offsetX"))
-		fmt.Println("X:", evt.Get("pageX"))
-		fmt.Println("X:", evt.Get("screenX"))
+		// fmt.Println("X:", evt.Get("offsetX"))
+		// fmt.Println("X:", evt.Get("pageX"))
+		// fmt.Println("X:", evt.Get("screenX"))
 	})
 	document.Set("onmousemove", func(evt *js.Object) {
 		if mouseDown {
