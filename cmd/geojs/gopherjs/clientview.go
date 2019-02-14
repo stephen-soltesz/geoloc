@@ -1,17 +1,22 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"math"
 	"math/rand"
+	"net/http"
 
 	// third-party
 	"github.com/gopherjs/gopherjs/js"
 	"github.com/gopherjs/jquery"
+	"github.com/stephen-soltesz/geoloc/model"
 )
 
 var jQuery = jquery.NewJQuery
 var document = js.Global.Get("document")
+var window = js.Global.Get("window")
 var xOffset float64 = 0
 var plotSamples int64 = 240
 var updateInterval float64 = 1000
@@ -78,9 +83,85 @@ func randColor(alpha string) string {
 		alpha)
 }
 
+type RawPoint struct {
+	Lat   float64 `json:"lat"`
+	Lon   float64 `json:"lon"`
+	Metro string  `json:"metro"`
+}
+type Point struct {
+	X int
+	Y int
+}
+
+type Data struct {
+	sites  []*model.Site
+	width  int
+	height int
+	// metros map[string][]*model.Site
+	metroPoints map[string][]*Point
+}
+
+func (d *Data) findMinSiteIndex(x, y int) int {
+	var j int
+	var cur, dmin int
+	dmin = Distance(d.height, d.width)
+	j = -1
+	for i := 0; i < len(d.sites); i++ {
+		sx := X(d.width, d.sites[i].Lon)
+		sy := Y(d.height, d.sites[i].Lat)
+		cur = Distance(sx-x, sy-y)
+		if cur < dmin {
+			dmin = cur
+			j = i
+		}
+	}
+	return j
+}
+
+func (d *Data) parseClients(data []RawPoint) {
+	for i := range data {
+		r := data[i]
+		p := Point{
+			X: X(d.width, r.Lon),
+			Y: Y(d.height, r.Lat),
+		}
+		d.metroPoints[r.Metro] = append(d.metroPoints[r.Metro], &p)
+	}
+}
+
+var data Data
+
 func addCanvas(containerName, canvasName string, width, height int) {
 	var sx, sy []int
 	var color []string
+
+	go func() {
+		data.metroPoints = make(map[string][]*Point)
+		data.sites = model.LoadSites("http://localhost:8080/sites2.json")
+		data.width = width
+		data.height = height
+	}()
+
+	go func() {
+		var d []byte
+		//jquery.GetJSON("/clients2.json", func(data interface{}) {
+		url := "http://localhost:8080/clients2.json"
+		fmt.Println(url)
+		resp, err := http.Get(url)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		d, err = ioutil.ReadAll(resp.Body)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		rawPoints := []RawPoint{}
+		err = json.Unmarshal(d, &rawPoints)
+		data.parseClients(rawPoints)
+	}()
+
 	canvas := document.Call("createElement", "canvas")
 	canvas.Set("id", canvasName)
 	canvas.Set("width", width)
@@ -89,10 +170,29 @@ func addCanvas(containerName, canvasName string, width, height int) {
 	button := document.Call("createElement", "INPUT")
 	button.Set("type", "button")
 	button.Set("value", "Load Sites")
+
 	button.Set("onclick", func(evt *js.Object) {
 		fmt.Println(evt)
-		jquery.GetJSON("/sites2.json", func(data interface{}) {
-			fmt.Println(data)
+		//jquery.GetJSON("/sites2.json", func(data interface{}) {
+		//fmt.Println(data)
+		context := canvas.Call("getContext", "2d")
+		context.Set("fillStyle", "black")
+		rand.Seed(42)
+
+		for i := range data.sites {
+			s := data.sites[i]
+			fmt.Println(s.Name, s.Lat, s.Lon)
+
+			sx = append(sx, X(width, s.Lon))
+			sy = append(sy, Y(height, s.Lat))
+			color = append(color, randColor("44"))
+			context.Call(
+				"fillRect",
+				sx[i],
+				sy[i],
+				3, 3)
+		}
+		/*
 			sites2, ok := data.([]interface{})
 			if !ok {
 				fmt.Println("ERROR: parsing sites2.json")
@@ -114,7 +214,8 @@ func addCanvas(containerName, canvasName string, width, height int) {
 					sy[i],
 					3, 3)
 			}
-		})
+		*/
+		//})
 	})
 
 	button2 := document.Call("createElement", "INPUT")
@@ -126,14 +227,16 @@ func addCanvas(containerName, canvasName string, width, height int) {
 		context.Set("globalAlpha", 0.5)
 		var w = width
 		var h = height
-		var d, dmin int
-		var j int
 		var w1 = w - 2
 		var h1 = h - 2
 		var n = len(sx)
-		for y := 0; y < h1; y++ {
+		var DMIN = Distance(h1, w1)
+
+		colorMinDist := func(y int) {
 			for x := 0; x < w1; x++ {
-				dmin = Distance(h1, w1)
+				var j int
+				var d, dmin int
+				dmin = DMIN
 				j = -1
 				for i := 0; i < n; i++ {
 					d = Distance(sx[i]-x, sy[i]-y)
@@ -142,16 +245,13 @@ func addCanvas(containerName, canvasName string, width, height int) {
 						j = i
 					}
 				}
-
-				// var p = c.getImageData(x, y, 1, 1).data;
-				// var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
-				// var color = getColorStr(color1[0], color1[1], color1[2], color2[0], color2[1], color2[2], cyclePct);
-
 				context.Set("fillStyle", color[j])
 				context.Call("fillRect", x, y, 1, 1)
-				// ctx.fillRect(x, y, 1, 1)
-
 			}
+		}
+
+		for y := 0; y < h1; y++ {
+			window.Call("setTimeout", colorMinDist, 1, y)
 		}
 	})
 
@@ -172,16 +272,20 @@ func addCanvas(containerName, canvasName string, width, height int) {
 
 		x := evt.Get("offsetX")
 		y := evt.Get("offsetY")
-		// fmt.Println("X:", evt.Get("clientX"))
-		// fmt.Println("Y:", evt.Get("clientY"))
 
 		context := canvas.Call("getContext", "2d")
 		context.Set("fillStyle", "#ff0000")
-		context.Call("fillRect", x, y, 4, 4)
+		context.Call("fillRect", x, y, 1, 1)
 
-		// fmt.Println("X:", evt.Get("offsetX"))
-		// fmt.Println("X:", evt.Get("pageX"))
-		// fmt.Println("X:", evt.Get("screenX"))
+		i := data.findMinSiteIndex(x.Int(), y.Int())
+		fmt.Println(data.sites[i].Name)
+		metro := data.sites[i].Name[:3]
+		points := data.metroPoints[metro]
+		for j := range points {
+			p := points[j]
+			context.Set("fillStyle", "#ff0000")
+			context.Call("fillRect", p.X, p.Y, 1, 1)
+		}
 	})
 	document.Set("onmousemove", func(evt *js.Object) {
 		if mouseDown {
