@@ -175,7 +175,7 @@ func serveHome(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Println("data", string(data))
+	// fmt.Println("data", string(data))
 	tmpl := template.Must(template.New(resourcefile).Parse(string(data)))
 	if ext == "html" {
 		w.Header().Set("Content-Type", "text/html; charset=utf-8")
