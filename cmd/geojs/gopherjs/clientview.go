@@ -1,12 +1,9 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"math"
 	"math/rand"
-	"net/http"
 
 	// third-party
 	"github.com/gopherjs/gopherjs/js"
@@ -143,29 +140,31 @@ func addCanvas(containerName, canvasName string, width, height int) {
 	}()
 
 	go func() {
-		var d []byte
-		//jquery.GetJSON("/clients2.json", func(data interface{}) {
-		url := "http://localhost:8080/clients2.json"
-		fmt.Println(url)
-		resp, err := http.Get(url)
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
-		d, err = ioutil.ReadAll(resp.Body)
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
-		rawPoints := []RawPoint{}
-		err = json.Unmarshal(d, &rawPoints)
-		data.parseClients(rawPoints)
+		jquery.GetJSON("/clients2.json", func(rawjson interface{}) {
+			p := rawjson.([]interface{})
+			rawPoints := make([]RawPoint, len(p))
+
+			for i := range p {
+				r := p[i].(map[string]interface{})
+				rawPoints[i].Lat = r["lat"].(float64)
+				rawPoints[i].Lon = r["lon"].(float64)
+				rawPoints[i].Metro = r["metro"].(string)
+			}
+			data.parseClients(rawPoints)
+		})
 	}()
 
 	canvas := document.Call("createElement", "canvas")
 	canvas.Set("id", canvasName)
 	canvas.Set("width", width)
 	canvas.Set("height", height)
+	canvas.Set("className", "canvas")
+
+	points := document.Call("createElement", "canvas")
+	points.Set("id", canvasName+"-points")
+	points.Set("width", width)
+	points.Set("height", height)
+	points.Set("className", "canvas")
 
 	button := document.Call("createElement", "INPUT")
 	button.Set("type", "button")
@@ -190,7 +189,7 @@ func addCanvas(containerName, canvasName string, width, height int) {
 				"fillRect",
 				sx[i],
 				sy[i],
-				3, 3)
+				8, 8)
 		}
 		/*
 			sites2, ok := data.([]interface{})
@@ -273,17 +272,18 @@ func addCanvas(containerName, canvasName string, width, height int) {
 		x := evt.Get("offsetX")
 		y := evt.Get("offsetY")
 
-		context := canvas.Call("getContext", "2d")
+		context := points.Call("getContext", "2d")
 		context.Set("fillStyle", "#ff0000")
-		context.Call("fillRect", x, y, 1, 1)
+		context.Call("clearRect", 0, 0, width, height)
+		context.Call("fillRect", x, y, 4, 4)
 
 		i := data.findMinSiteIndex(x.Int(), y.Int())
 		fmt.Println(data.sites[i].Name)
 		metro := data.sites[i].Name[:3]
-		points := data.metroPoints[metro]
-		for j := range points {
-			p := points[j]
-			context.Set("fillStyle", "#ff0000")
+		clients := data.metroPoints[metro]
+		for j := range clients {
+			p := clients[j]
+			context.Set("fillStyle", "#FF0000")
 			context.Call("fillRect", p.X, p.Y, 1, 1)
 		}
 	})
@@ -306,9 +306,10 @@ func addCanvas(containerName, canvasName string, width, height int) {
 			plotSamples -= 10
 		}
 	})
+	jQuery(containerName).Prepend(points)
 	jQuery(containerName).Prepend(canvas)
-	jQuery(containerName).Append(button)
-	jQuery(containerName).Append(button2)
+	jQuery("#buttons").Append(button)
+	jQuery("#buttons").Append(button2)
 }
 
 func updateCanvas(name, uri string) {
