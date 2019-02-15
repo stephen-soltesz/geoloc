@@ -127,6 +127,18 @@ func (d *Data) parseClients(data []RawPoint) {
 }
 
 var data Data
+var metros = map[string]bool{}
+var colorMap = map[string]string{}
+var scolors = []string{
+	"#ff0000",
+	"#ff8800",
+	"#00ff00",
+	"#00ffff",
+	"#0088ff",
+	"#0000ff",
+	"#8800ff",
+	"#ff00ff",
+}
 
 func addCanvas(containerName, canvasName string, width, height int) {
 	var sx, sy []int
@@ -184,7 +196,10 @@ func addCanvas(containerName, canvasName string, width, height int) {
 
 			sx = append(sx, X(width, s.Lon))
 			sy = append(sy, Y(height, s.Lat))
+
+			// color = append(color, randColor("44"))
 			color = append(color, randColor("44"))
+			colorMap[s.Name[:3]] = randColor("ff") // scolors[i%len(scolors)]
 			context.Call(
 				"fillRect",
 				sx[i],
@@ -254,6 +269,30 @@ func addCanvas(containerName, canvasName string, width, height int) {
 		}
 	})
 
+	button3 := document.Call("createElement", "INPUT")
+	button3.Set("type", "button")
+	button3.Set("value", "Draw All Clients")
+	button3.Set("onclick", func(evt *js.Object) {
+		fmt.Println(evt)
+		context := points.Call("getContext", "2d")
+
+		for i := range data.sites {
+			loc := data.sites[i].Name[:3]
+			if _, ok := metros[loc]; ok {
+				continue
+			}
+			metros[loc] = true
+			fmt.Println("loc:", loc)
+			clients := data.metroPoints[loc]
+			for j := range clients {
+				p := clients[j]
+				// context.Set("fillStyle", "#ff0000")
+				context.Set("fillStyle", colorMap[loc])
+				context.Call("fillRect", p.X, p.Y, 1, 1)
+			}
+		}
+	})
+
 	var mouseDown = false
 	var mousePrevPos *js.Object
 	document.Set("onmousedown", func(evt *js.Object) {
@@ -275,16 +314,27 @@ func addCanvas(containerName, canvasName string, width, height int) {
 		context := points.Call("getContext", "2d")
 		context.Set("fillStyle", "#ff0000")
 		context.Call("clearRect", 0, 0, width, height)
-		context.Call("fillRect", x, y, 4, 4)
 
 		i := data.findMinSiteIndex(x.Int(), y.Int())
 		fmt.Println(data.sites[i].Name)
-		metro := data.sites[i].Name[:3]
-		clients := data.metroPoints[metro]
-		for j := range clients {
-			p := clients[j]
-			context.Set("fillStyle", "#FF0000")
-			context.Call("fillRect", p.X, p.Y, 1, 1)
+		loc := data.sites[i].Name[:3]
+
+		if _, ok := metros[loc]; ok {
+			// the metro location is already displayed. Remove it.
+			delete(metros, loc)
+		} else {
+			metros[loc] = true
+		}
+
+		for loc, _ := range metros {
+			fmt.Println("loc:", loc)
+			clients := data.metroPoints[loc]
+			for j := range clients {
+				p := clients[j]
+				// context.Set("fillStyle", "#ff0000")
+				context.Set("fillStyle", colorMap[loc])
+				context.Call("fillRect", p.X, p.Y, 1, 1)
+			}
 		}
 	})
 	document.Set("onmousemove", func(evt *js.Object) {
@@ -310,6 +360,7 @@ func addCanvas(containerName, canvasName string, width, height int) {
 	jQuery(containerName).Prepend(canvas)
 	jQuery("#buttons").Append(button)
 	jQuery("#buttons").Append(button2)
+	jQuery("#buttons").Append(button3)
 }
 
 func updateCanvas(name, uri string) {
@@ -318,6 +369,7 @@ func updateCanvas(name, uri string) {
 
 	img := newImage(uri)
 	img.addEventListener("load", false, func() {
+		context.Set("globalAlpha", 0.2)
 		context.Call("drawImage", img.Object, 0, 0)
 	})
 }
