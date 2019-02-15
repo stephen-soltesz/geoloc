@@ -23,11 +23,25 @@ body {
     overflow: auto;
 }
 
+/*
 #mycanvas {
 	display: block;
 	margin-left: auto;
-	margin-right: auto;
+    margin-right: auto;
 }
+
+#mycanvas-points {
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+}
+*/
+
+#plot-container { overflow: scroll; }
+#container { position: relative; overflow: scroll; height:750px; }
+#mycanvas { position: relative; top: 0; left: 0; }
+#mycanvas-points { position: absolute; top: 0; left: 0; }
+.canvas { position: relative; top: 0; left: 0; }
 
 .plot-container {
 	box-sizing: border-box;
