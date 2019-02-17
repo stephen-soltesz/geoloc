@@ -48,8 +48,8 @@ func (p *Point) Y() int {
 	return int(float64(p.Height) * (1 - (p.Lat+90.0)/180.0))
 }
 
-func addLabel(img *image.RGBA, x, y int, label string) {
-	col := color.RGBA{20, 20, 20, 255}
+func addLabel(img *image.NRGBA, x, y int, label string) {
+	col := color.NRGBA{20, 20, 20, 255}
 	point := fixed.Point26_6{
 		X: fixed.Int26_6(x * 64),
 		Y: fixed.Int26_6(y * 64),
@@ -64,7 +64,7 @@ func addLabel(img *image.RGBA, x, y int, label string) {
 	d.DrawString(label)
 }
 
-func generateVoronoi(sx, sy []int, img *image.RGBA) image.Image {
+func generateVoronoi(sx, sy []int, img *image.NRGBA) image.Image {
 	// generate a random color for each site
 	sc := make([]color.NRGBA, len(sx))
 	rand.Seed(41)
@@ -73,7 +73,7 @@ func generateVoronoi(sx, sy []int, img *image.RGBA) image.Image {
 			uint8(rand.Intn(256)),
 			uint8(rand.Intn(256)),
 			uint8(rand.Intn(256)),
-			75}
+			125}
 	}
 
 	// generate diagram by coloring each pixel with color of nearest site
@@ -112,7 +112,7 @@ func addSitesAndVoronoiToMap(file string) error {
 	if err != nil {
 		return err
 	}
-	rgb := img.(*image.RGBA)
+	rgb := img.(*image.NRGBA)
 	log.Println(t)
 
 	r := img.Bounds()
@@ -138,7 +138,7 @@ func addSitesAndVoronoiToMap(file string) error {
 		sy[i] = p.Y()
 		draw.Draw(
 			rgb, image.Rect(p.X()-2, p.Y()-2, p.X()+2, p.Y()+2),
-			image.NewUniform(color.RGBA{255, 0, 0, 255}), image.ZP, draw.Src,
+			image.NewUniform(color.NRGBA{255, 0, 0, 255}), image.ZP, draw.Src,
 		)
 		addLabel(rgb, p.X()-12, p.Y()-5, s.Metro[1])
 	}
@@ -149,7 +149,7 @@ func addSitesAndVoronoiToMap(file string) error {
 
 }
 
-func plotClients(img *image.RGBA) {
+func plotClients(img *image.NRGBA) {
 	if len(clientLocations) == 0 {
 		log.Println("clientLocations is empty")
 		return
@@ -158,7 +158,15 @@ func plotClients(img *image.RGBA) {
 	buf := bytes.NewBuffer(clientLocations)
 	r := csv.NewReader(buf)
 	b := img.Bounds()
+	i := 0
 	for rec, err := r.Read(); err == nil; rec, err = r.Read() {
+		i++
+		//if i%2 == 0 {
+		//continue
+		//}
+		//if rec[3] != "lga" && rec[3] != "fln" && rec[3] != "hnd" && rec[3] != "jnb" && rec[3] != "ham" {
+		//continue
+		//}
 		lat, _ := strconv.ParseFloat(rec[1], 64)
 		lon, _ := strconv.ParseFloat(rec[2], 64)
 		p := Point{
@@ -167,10 +175,10 @@ func plotClients(img *image.RGBA) {
 			Width:  b.Max.X,
 			Height: b.Max.Y,
 		}
-		c := color.RGBA{uint8(0), uint8(0), uint8(0), 255}
+		c := color.NRGBA{uint8(0), uint8(0), uint8(0), 255}
 
 		// fmt.Println(p.X(), p.Y(), c)
-		img.SetRGBA(p.X(), p.Y(), c)
+		img.SetNRGBA(p.X(), p.Y(), c)
 	}
 }
 
