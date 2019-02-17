@@ -37,7 +37,7 @@ body {
 }
 */
 
-#plot-container { overflow: scroll; }
+#worldmap { overflow: scroll; }
 #container { position: relative; overflow: scroll; height: 85vh; }
 
 
@@ -45,7 +45,7 @@ body {
 #mycanvas-points { position: absolute; top: 0; left: 0; }
 .canvas { position: relative; } /* top: 0; left: 0; }  */
 
-.plot-container {
+.worldmap {
 	box-sizing: border-box;
 	align: center;
 /*	height: 450px; */
