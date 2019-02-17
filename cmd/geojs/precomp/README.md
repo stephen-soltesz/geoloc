@@ -14,9 +14,9 @@
 
 * Parse sites config information.
 
-  - [-] normalize information: metro, lat, lon.
-  - [-] create a list of those values.
-  - [-] filter bad sites & convert ambiguous sites (change query also).
+  - [+] normalize information: metro, lat, lon.
+  - [+] create a list of those values.
+  - [+] filter bad sites & convert ambiguous sites (change query also).
 
 * On double click, fetch, parse and plot client points. Cache values.
 
