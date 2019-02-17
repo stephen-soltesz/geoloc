@@ -153,7 +153,7 @@ var scolors = []string{
 }
 
 func downloadMetroClients(metro string, context *js.Object) {
-	jquery.GetJSON("/metros/"+metro+".json", func(rawjson interface{}) {
+	jquery.GetJSON("metros/"+metro+".json", func(rawjson interface{}) {
 		p := rawjson.([]interface{})
 		rawPoints := make([]RawPoint, len(p))
 
@@ -185,7 +185,7 @@ func drawMetro(metro string, context *js.Object) {
 }
 
 func loadSites(canvas *js.Object) {
-	jquery.GetJSON("/sites.json", func(rawjson interface{}) {
+	jquery.GetJSON("sites.json", func(rawjson interface{}) {
 		rawSites := rawjson.([]interface{})
 
 		sites := make([]*model.Site, 0, len(rawSites))
@@ -409,7 +409,7 @@ func setupGeoJS() {
 	// Download image. Onload add canvas with image.
 	fmt.Println("setup canvas")
 	size := getOption("size", "medium")
-	setupCanvas("container", "/"+size+"-base.png")
+	setupCanvas("container", size+"-base.png")
 }
 
 var firstRun = true
