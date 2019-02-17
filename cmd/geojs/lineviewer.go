@@ -9,11 +9,11 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"path"
 	"path/filepath"
 	"runtime/pprof"
 	"strconv"
 	"strings"
-	"text/template"
 
 	"github.com/m-lab/go/rtx"
 )
@@ -163,9 +163,9 @@ func serveHome(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Method nod allowed", 405)
 		return
 	}
-	_, file, ext := splitAll(r.URL.Path)
+	_, _, ext := splitAll(r.URL.Path)
 
-	resourcefile := fmt.Sprintf("%s/%s", localPrefix, file)
+	resourcefile := path.Join(localPrefix, r.URL.Path)
 	fmt.Println(resourcefile)
 	data, err = ioutil.ReadFile(resourcefile)
 
@@ -176,7 +176,7 @@ func serveHome(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// fmt.Println("data", string(data))
-	tmpl := template.Must(template.New(resourcefile).Parse(string(data)))
+	// tmpl := template.Must(template.New(resourcefile).Parse(string(data)))
 	if ext == "html" {
 		w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	} else if ext == "js" {
@@ -184,7 +184,8 @@ func serveHome(w http.ResponseWriter, r *http.Request) {
 	} else if ext == "css" {
 		w.Header().Set("Content-Type", "text/css; charset=utf-8")
 	}
-	tmpl.Execute(w, r.Host)
+	w.Write(data)
+	// tmpl.Execute(w, r.Host)
 }
 
 func serveSvg(w http.ResponseWriter, r *http.Request) {
