@@ -1,0 +1,49 @@
+{
+    "tables": {
+        "DEFAULT": [
+            {
+                "barDimension": [
+                    "cpa"
+                ],
+                "barMetric": [
+                    30
+                ]
+            },
+            {
+                "barDimension": [
+                    "lga"
+                ],
+                "barMetric": [
+                    -73
+                ]
+            }
+        ]
+    },
+    "fields": {
+        "barDimension": [
+            {
+                "id": "qt_5dwcxhixvb",
+                "name": "metro",
+                "type": "TEXT",
+                "concept": "DIMENSION"
+            }
+        ],
+        "barMetric": [
+            {
+                "id": "qt_zgbqe2ixvb",
+                "name": "latlon",
+                "type": "NUMBER",
+                "concept": "METRIC"
+            }
+        ]
+    },
+    "style": {
+        "barColor": {
+            "value": {
+                "color": "#F44336",
+                "opacity": 1
+            },
+            "defaultValue": "#000000"
+        }
+    }
+}

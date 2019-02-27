@@ -1,0 +1,25 @@
+{
+  "name": "My Visualizations",
+  "organization": "MyOrg",
+  "description": "My first visualization package.",
+  "logoUrl": "https://logo",
+  "organizationUrl": "https://url",
+  "supportUrl": "https://url",
+  "privacyPolicyUrl": "https://url",
+  "termsOfServiceUrl": "https://url",
+  "packageUrl": "https://url",
+  "supportUrl": "https://url",
+  "devMode": true,
+  "components": [
+    {
+      "name": "myViz",
+      "description": "My first Community Visualization",
+      "iconUrl": "https://url",
+      "resource": {
+          "js": "gs://soltesz-mlab-sandbox/v2/viz.js",
+      "config": "gs://soltesz-mlab-sandbox/v2/viz.json",
+         "css": "gs://soltesz-mlab-sandbox/v2/viz.css"
+      }
+    }
+  ]
+}
