@@ -33,10 +33,10 @@ function drawViz(data) {
 
   // set the canvas width and height
   ctx.canvas.width = dscc.getWidth();
-  ctx.canvas.height = dscc.getHeight();
+  ctx.canvas.height = dscc.getHeight() - 5;
 
   ctx.fillStyle = data.style.barColor.value.color || data.style.barColor.defaultValue;
-  ctx.fillRect(10, 10, 100, 100);
+  ctx.fillRect(10, 10, 10, 10);
 
   loadData(canvas, data);
 }
