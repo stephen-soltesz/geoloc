@@ -61,6 +61,18 @@ func (img *Image) height() int {
 	return img.Object.Get("height").Int()
 }
 
+type Canvas struct {
+	*js.Object
+}
+
+func (c *Canvas) width() int {
+	return c.Object.Get("width").Int()
+}
+
+func (c *Canvas) height() int {
+	return c.Object.Get("height").Int()
+}
+
 func X(w int, lon float64) int {
 	return int(math.Round(float64(w) * (lon + 180.0) / 360.0))
 }
