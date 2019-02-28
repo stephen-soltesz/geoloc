@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"math"
 
@@ -123,9 +124,10 @@ func drawSites(canvas *js.Object, sites []*Site) {
 }
 
 func loadData(canvas, data *js.Object) {
-	fmt.Println("THIS IS A TEST:", data.String())
-	// loadImage(canvas, "https://storage.googleapis.com/soltesz-mlab-sandbox/v2/small-base.png")
-	drawImage(canvas, "") // js.Global.Get("worldmapSmall").String())
+	d := data.Interface().(map[string]interface{})
+	b, _ := json.MarshalIndent(d, "", "  ")
+	fmt.Println("THIS IS A TEST:", string(b))
+	drawImage(canvas, "")
 	loadSites(canvas)
 	fmt.Println("Setting ondblclick event handler")
 	document.Set("ondblclick", func(evt *js.Object) {
