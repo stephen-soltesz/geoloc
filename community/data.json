@@ -26,6 +26,12 @@
                 "name": "metro",
                 "type": "TEXT",
                 "concept": "DIMENSION"
+            },
+            {
+                "id": "qt_zgbqe2ixvb",
+                "name": "latlon",
+                "type": "NUMBER",
+                "concept": "DIMENSION"
             }
         ],
         "barMetric": [
