@@ -24,6 +24,22 @@ canvas.id = 'myViz';
 document.body.appendChild(canvas);
 var lastData = '';
 
+var btn = document.createElement("INPUT");
+btn.id = 'buttonClear';
+btn.type = "button";
+btn.value = "Clear";
+document.body.appendChild(btn);
+
+var btn = document.createElement("INPUT");
+btn.id = 'buttonDraw';
+btn.type = "button";
+btn.value = "Draw All";
+document.body.appendChild(btn);
+
+// document.getElementById("myDIV").style.position = "absolute";
+
+// console.log(palette('mpn65', 29));
+
 function drawViz(data) {
   var ctx = canvas.getContext('2d');
   lastData = data;
