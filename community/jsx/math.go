@@ -18,11 +18,12 @@ func ParseInt(v string) int64 {
 	return js.Global.Call("parseInt", v).Int64()
 }
 
-// lat := js.Global.Call("parseFloat", ll[0]).Float()
-// lon := js.Global.Call("parseFloat", ll[1]).Float()
-
 func GetElementById(id string) *js.Object {
 	return document.Call("getElementById", id)
+}
+
+func GetCanvasById(id string) *Canvas {
+	return &Canvas{Object: document.Call("getElementById", id)}
 }
 
 func Random() float64 {
