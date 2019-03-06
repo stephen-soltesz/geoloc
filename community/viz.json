@@ -6,7 +6,7 @@
       "elements": [
         {
           "id": "metroDimension",
-          "label": "Metro",
+          "label": "metro",
           "type": "DIMENSION",
           "options": {
             "min": 1,
@@ -15,9 +15,8 @@
         },
         {
           "id": "geoDimension",
-          "label": "Latitude/Longitude",
+          "label": "latlon",
           "type": "DIMENSION",
-          "supportedTypes": ["GEO"],
           "options": {
             "min": 1,
             "max": 1
@@ -47,90 +46,6 @@
           "defaultValue": "#000000"
         }
       ]
-    },
-    {
-      "id": "option",
-      "label": "TLS Only",
-      "elements": [
-        {
-          "type": "CHECKBOX",
-          "id": "tls",
-          "label": "TLS Only",
-          "defaultValue": "false"
-        }
-      ]
-    },
-    {
-      "id": "series",
-      "label": "Series Color",
-      "elements": [
-        {
-          "type": "FILL_COLOR",
-          "id": "series1",
-          "label": "thing",
-          "defaultValue": "#ff0029"
-        },
-        {
-          "type": "FILL_COLOR",
-          "id": "series2",
-          "label": "thing",
-          "defaultValue": "#377eb8"
-        },
-        {
-          "type": "FILL_COLOR",
-          "id": "series3",
-          "label": "thing",
-          "defaultValue": "#66a61e"
-        },
-        {
-          "type": "FILL_COLOR",
-          "id": "series4",
-          "label": "thing",
-          "defaultValue": "#984ea3"
-        },
-        {
-          "type": "FILL_COLOR",
-          "id": "series5",
-          "label": "thing",
-          "defaultValue": "#00d2d5"
-        },
-        {
-          "type": "FILL_COLOR",
-          "id": "series6",
-          "label": "thing",
-          "defaultValue": "#ff7f00"
-        },
-        {
-          "type": "FILL_COLOR",
-          "id": "series7",
-          "label": "thing",
-          "defaultValue": "#af8d00"
-        },
-        {
-          "type": "FILL_COLOR",
-          "id": "series8",
-          "label": "thing",
-          "defaultValue": "#7f80cd"
-        },
-        {
-          "type": "FILL_COLOR",
-          "id": "series9",
-          "label": "thing",
-          "defaultValue": "#b3e900"
-        }
-      ]
     }
-  ],
-  "themeStyle": {
-    "seriesColor": [
-      {
-        "color": "#ff0000",
-        "opacity": 1
-      },
-      {
-        "color": "#ff00ff",
-        "opacity": 1
-      }
-    ]
-  }
+  ]
 }
