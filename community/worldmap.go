@@ -1,7 +1,7 @@
 package main
 
 import (
-	"container/heap"
+	"fmt"
 
 	"github.com/gopherjs/gopherjs/js"
 	"github.com/stephen-soltesz/geoloc/community/jsx"
@@ -62,6 +62,7 @@ type SiteData struct {
 	metroPoints map[string][]*Point
 }
 
+/*
 // SiteDistance is a thing.
 type SiteDistance []*Site
 
@@ -116,6 +117,7 @@ func findClosestNSites(s *Site, sites []*Site, n int) []*Site {
 	}
 	return nearest
 }
+*/
 
 var data = &SiteData{}
 var metros = map[string]bool{}
@@ -148,6 +150,7 @@ func (d *SiteData) findMinSiteIndex(x, y int) int {
 }
 
 func loadSites(canvas *jsx.Canvas) {
+	fmt.Println("loadSites")
 	rawSites := js.Global.Get("sites").Interface().([]interface{})
 	data.sites = make([]*Site, 0, len(rawSites))
 	for i := range rawSites {
@@ -273,6 +276,7 @@ func drawMetro(metro string, context *js.Object) {
 }
 
 func setupCanvas() {
+	fmt.Println("setupCanvas")
 	icolors := js.Global.Call("palette", "mpn65", 29).Interface().([]interface{})
 	for i := range icolors {
 		colors = append(colors, icolors[i].(string))
@@ -350,16 +354,21 @@ func setupCanvas() {
 	})
 	document.Get("body").Call("appendChild", btnDraw)
 
+	fmt.Println("end setupCanvas")
 }
 func loadData(dsData *js.Object) {
+	fmt.Println("loadData")
 	c := jsx.GetCanvasById("wmCanvas")
 	context := c.GetContext()
 
-	color := dsData.Get("style").Get("barColor").Get("value").Get("color").String()
-	colorDefault := dsData.Get("style").Get("barColor").Get("defaultValue").String()
-	if color == "" {
-		color = colorDefault
-	}
+	/*
+		color := dsData.Get("style").Get("barColor").Get("value").Get("color").String()
+		colorDefault := dsData.Get("style").Get("barColor").Get("defaultValue").String()
+		if color == "" {
+			color = colorDefault
+		}
+	*/
+	color := "#ff0000"
 	context.Set("fillStyle", color)
 	context.Call("fillRect", 10, 20, 10, 10)
 
@@ -376,6 +385,8 @@ func loadData(dsData *js.Object) {
 }
 
 func main() {
+	fmt.Println("main")
 	setupCanvas()
+	fmt.Println("dscc.Call")
 	dscc.Call("subscribeToData", loadData, js.M{"transform": dscc.Get("objectTransform")})
 }
