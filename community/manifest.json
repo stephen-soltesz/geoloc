@@ -16,9 +16,9 @@
       "description": "My first Community Visualization",
       "iconUrl": "https://url",
       "resource": {
-          "js": "gs://soltesz-mlab-sandbox/v2/viz.js",
-      "config": "gs://soltesz-mlab-sandbox/v2/viz.json",
-         "css": "gs://soltesz-mlab-sandbox/v2/viz.css"
+          "js": "gs://soltesz-mlab-sandbox/v4/viz.js",
+      "config": "gs://soltesz-mlab-sandbox/v4/viz.json",
+         "css": "gs://soltesz-mlab-sandbox/v4/viz.css"
       }
     }
   ]
