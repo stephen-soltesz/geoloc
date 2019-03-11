@@ -1,0 +1,61 @@
+{
+  "data": [
+    {
+      "id": "concepts",
+      "label": "Concepts",
+      "elements": [
+        {
+          "id": "metroDimension",
+          "label": "metro",
+          "type": "DIMENSION",
+          "options": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        {
+          "id": "geoDimension",
+          "label": "Latitude/Longitude",
+          "type": "DIMENSION",
+          "supportedTypes": ["GEO"],
+          "options": {
+            "min": 0,
+            "max": 1
+          }
+        },
+        {
+          "id": "extraDimension",
+          "label": "extra",
+          "type": "DIMENSION",
+          "options": {
+            "min": 0,
+            "max": 2
+          }
+        },
+        {
+          "id": "valueMetric",
+          "label": "Metric",
+          "type": "METRIC",
+          "options": {
+            "min": 1,
+            "max": 1
+          }
+        }
+      ]
+    }
+  ],
+  "style": [
+    {
+      "id": "color",
+      "label": "Colors",
+      "elements": [
+        {
+          "type": "FONT_COLOR",
+          "id": "barColor",
+          "label": "Bar Color",
+          "defaultValue": "#000000"
+        }
+      ]
+    }
+  ]
+}
