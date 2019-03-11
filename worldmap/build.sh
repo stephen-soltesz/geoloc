@@ -10,8 +10,8 @@ cat vendor/dscc.min.js \
     vendor/palette.js \
     vendor/data.world.js \
     build/data.sites.js \
-    map.js > viz.js
+    map.js > build/viz.js
 
 gsutil -h 'Cache-Control:private, max-age=0, no-transform' cp -a public-read \
-    viz.js viz.json viz.css manifest.json gs://soltesz-mlab-sandbox/v6/
+    build/viz.js viz.json viz.css manifest.json gs://soltesz-mlab-sandbox/v6/
 
