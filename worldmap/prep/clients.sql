@@ -8,7 +8,7 @@ FROM (
     ROW_NUMBER() OVER(PARTITION BY metro) as row,
     c,
     m,
-    CEIL(50000 * m/c) as lim,
+    CEIL(20000 * m/c) as lim,
     metro,
     lat,
     lon
