@@ -1,7 +1,7 @@
 var div = document.createElement('div');
 div.id = "map-holder";
 div.style.width = "100vw";
-div.style.height = "100vh";
+div.style.height = "99vh";
 document.body.appendChild(div);
 document.body.style.backgroundColor = "#2A2C39";
 
@@ -24,8 +24,8 @@ function randColor(alpha) {
 // Define size of map group
 // Full world map is 2:1 ratio
 // Using 12:5 because we will crop top and bottom of map
-w = dscc.getWidth();
-h = dscc.getHeight();
+w = dscc.getWidth()-5;
+h = dscc.getHeight()-15;
 // variables for catching min and max zoom factors
 var minZoom;
 var maxZoom;
@@ -151,6 +151,9 @@ var svg = d3
     // add zoom functionality
     .call(zoom);
 
+// var metroMap = {};
+// var metros = {};
+
 // get map data
 var loadMap = function(json) {
 
@@ -187,6 +190,10 @@ var loadMap = function(json) {
         .on("click", function(d, i) {
             console.log(d, i);
             name = d[2];
+            if (typeof metroMap === 'undefined') {
+                console.log('IGNORING undefined metroMap');
+                return
+            }
             var remove = metroMap[name];
             metroMap[name] = !remove;
             if (remove) {
@@ -296,12 +303,13 @@ var getPoints = function() {
 }
 
 function loadData(data) {
-    metros = {};
-    metroMap = {};
     var i = 0;
+    metroMap = {};
+    metros = {};
     var colorMap = {};
     // var icolors = palette("rainbow", 16);
     // var icolors = palette("mpn65", 12);
+    /*
     var icolors = [
         'rgb(255, 0, 41)',
         'rgb(0, 210, 213)',
@@ -313,12 +321,13 @@ function loadData(data) {
         'rgb(255, 237, 111)',
         'rgb(0, 208, 103)',
     ];
-
     console.log(icolors);
+    */
+
     var ic = 0;
     var p = [];
     data.tables.DEFAULT.forEach(function(c) {
-        if (i % 3 == 0) {
+        if (true) { // i % 3 == 0) {
             if (c.hasOwnProperty('geoDimension') && c.hasOwnProperty('metroDimension')) {
                 var ll = c.geoDimension[0].split(',')
                 var v = {
@@ -328,7 +337,7 @@ function loadData(data) {
                 };
                 if (!(v.metro in metros)) {
                     metros[v.metro] = [];
-                    color = icolors[ic % icolors.length];
+                    color = data.theme.themeSeriesColor[metroColor[v.metro]].color;
                     colorMap[v.metro] = color;
                     console.log(v.metro + " " + color);
                     ic += 1;
@@ -360,6 +369,7 @@ function loadData(data) {
 }
 
 loadMap(wm);
+console.log("load data");
 dscc.subscribeToData(loadData, {
     transform: dscc.objectTransform
 });
