@@ -47,7 +47,20 @@ local data = {
       },
       defaultValue: '#000000'
     }
-  }
+  },
+  theme: {
+    themeSeriesColor: [
+      { color: "#FF1744" }, // red
+      { color: "#d500f9" }, // pink
+      { color: "#798dff" }, // purple
+      { color: "#40c4ff" }, // blue
+      { color: "#00e676" }, // green
+      { color: "#eeff41" }, // yellow
+      { color: "#ffab00" }, // orange
+      { color: "#efebe9" }, // white
+      { color: "#ffffff" } // white
+    ],
+  },
 };
 
 'data =' + std.toString(data) + ';'
