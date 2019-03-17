@@ -10,6 +10,7 @@ cat vendor/dscc.min.js \
     vendor/palette.js \
     vendor/data.world.js \
     build/data.sites.js \
+    build/data.colors.js \
     map.js > build/viz.js
 
 gsutil -h 'Cache-Control:private, max-age=0, no-transform' cp -a public-read \
