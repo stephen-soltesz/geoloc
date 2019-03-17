@@ -8,7 +8,7 @@ FROM (
     ROW_NUMBER() OVER(PARTITION BY metro) as row,
     c,
     m,
-    CEIL(30000 * m/c) as lim,
+    CEIL(50000 * m/c) as lim,
     metro,
     lat,
     lon
@@ -30,7 +30,8 @@ FROM (
         WHERE
             _PARTITIONTIME = TIMESTAMP_SUB(TIMESTAMP_TRUNC(CURRENT_TIMESTAMP(), DAY), INTERVAL 24 HOUR)
             AND connection_spec.data_direction = 1
-            AND connection_spec.tls IS TRUE
+            AND connection_spec.tls IS NOT FALSE
+            -- AND connection_spec.tls IS TRUE
             -- AND connection_spec.client_geolocation.continent_code = 'NA'
             AND web100_log_entry.snap.HCThruOctetsAcked >= 8192
             AND (web100_log_entry.snap.SndLimTimeRwin + web100_log_entry.snap.SndLimTimeCwnd + web100_log_entry.snap.SndLimTimeSnd) >= 9000000
