@@ -29,7 +29,7 @@ func filterProd(sites []*Site) []*Site {
 		if sites[i].Name[4] == 'c' || sites[i].Name[4] == 't' {
 			continue
 		}
-		if sites[i].Name == "lba01" || sites[i].Name == "trn01" || sites[i].Name == "acc02" {
+		if sites[i].Name == "lba01" || sites[i].Name == "los01" || sites[i].Name == "acc02" {
 			continue
 		}
 		/*
